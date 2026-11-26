@@ -44,14 +44,31 @@ public class Calendar {
 
     public static void search_and_count() {
         int[] values = {4, 7, 2, 7, 9, 7, 3};
-        // int searched_value =
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Welche Zahl wollen Sie überprüfen? - ");
+        int number = input.nextInt();
+
+        int number_of_copies = 0;
+
+        for (int value: values) {
+            if (value == number)
+                number_of_copies++;
+        }
+        if (number_of_copies == 0)
+            System.out.printf("Die Zahl %d kommt nicht in der Lösung vor\n", number);
+        else
+            System.out.printf("Die Zahl %d kommt %d Mal vor\n", number, number_of_copies);
     }
 
     public static void main(String[] args) {
-        test_min();
+        search_and_count();
+
+        /*test_min();
 
         for (int i = 1; i <= 12; i++) {
             System.out.println(daysInMonth(i , 2020));
-        }
+        }*/
     }
 }
